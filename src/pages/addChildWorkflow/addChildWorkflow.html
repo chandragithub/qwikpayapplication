@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> QwikFee </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label class="item item-input"> Child Name </ion-label>
+    <ion-input type="text" [(ngModel)]="childName" (ngModelChange)="schoolSelect(childName)"> </ion-input>
+  </ion-item>
+
+  <button ion-button color="secondary" class="right-btn" (click)="addChildList({'childName': childName})"> Add </button>
+  <ion-list no-lines class="school-list-bootstrap">
+    <div class="row required" *ngIf="!childListAvailable">
+        Please add atleast one child to make Payment.
+    </div>
+    <ion-item-sliding *ngFor="let childLists of childList" class="list-items">
+      <ion-item>
+        Chile Name : {{childLists.childName}}
+        <button ion-button color="secondary" class="right-btn"  (click)="FeeInfoPage()"> Next </button>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list> 
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="footer"> &copy; qwikfee.com | all right reserved </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> QwikFee </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <ion-list no-lines>
+       <ion-item>
+      <ion-label>Fee Type </ion-label>
+      <ion-select [(ngModel)]="feeType">
+        <ion-option value="Type 1" selected="true"> Type 1 </ion-option>
+        <ion-option value="Type 2"> Type 2</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Fee Amount </ion-label>
+      <ion-input type="number" [(ngModel)]="childName" (ngModelChange)="schoolSelect(childName)"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Mode of Payment</ion-label>
+      <ion-select [(ngModel)]="paymentMode">
+        <ion-option value="Net Banking" selected="true"> Net Banking </ion-option>
+        <ion-option value="Credit Card"> Credit Card </ion-option>
+        <ion-option value="Debit Card"> Debit Card </ion-option>
+      </ion-select>
+    </ion-item>
+   </ion-list>
+    <button ion-button color="secondary" class="right-btn" (click)="pay({'schoolName': schoolList})"> Pay </button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="footer"> &copy; qwikfee.com | all right reserved </ion-title>
+  </ion-toolbar>
+</ion-footer>

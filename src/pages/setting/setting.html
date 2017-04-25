@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> QwikFee </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+   <ion-item>
+      <ion-label>Select School</ion-label>
+      <ion-select [(ngModel)]="schoolList" (ngModelChange)="schoolSelect(schoolList)">
+        <ion-option value="Navodaya School" selected="true"> Navodya School</ion-option>
+        <ion-option value="Model School"> Model School</ion-option>
+        <ion-option value="St. Joshep School"> St. Joshep School</ion-option>
+      </ion-select>
+    </ion-item>
+    
+    <button ion-button color="secondary" class="right-btn" (click)="addSchoolList({'schoolName': schoolList})"> Add </button>
+
+    <ion-list no-lines class="school-list-bootstrap">
+    <div class="row required left-container" *ngIf="!isSchoolAvailable">
+        Please add atleast one School to make Payment.
+    </div>
+    <ion-item-sliding *ngFor="let schoolList of studList" class="list-items">
+      <ion-item>
+        School Name: <span class="title"> {{schoolList.schoolName}} </span>
+        <button ion-button color="secondary" class="right-btn"  (click)="nextAddChild()"> Next </button>
+        <button ion-button color="secondary" class="right-btn"  (click)="deleteChild(schoolList.schoolName)"> Delete </button>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list> 
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="footer"> &copy; qwikfee.com | all right reserved </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> QwikFee </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <ion-grid>
+    <ion-row>
+      <ion-col col-6 class="pay" (click)="pushPage()">
+        <ion-icon name="logo-usd" class="large-icon"></ion-icon>
+        <p> Pay </p>
+      </ion-col>
+      <ion-col col-6 class="view-history">
+        <ion-icon name="book" class="large-icon"></ion-icon>
+        <p> View History </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="update-profile">
+        <ion-icon name="contact" class="large-icon"></ion-icon>
+        <p> Update Profile </p>
+      </ion-col> 
+      <ion-col col-6 class="add-info">
+        <ion-icon name="add" class="large-icon"></ion-icon>
+        <p> Add Info </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="footer"> &copy; qwikfee.com | all right reserved </ion-title>
+  </ion-toolbar>
+</ion-footer>
